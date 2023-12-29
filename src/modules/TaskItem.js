@@ -15,18 +15,27 @@ export default class TaskItem {
     getDesc() { return this.desc; }
     setDesc(newDesc) { this.desc = newDesc; }
 
-    // TODO: something wrong with date conversion
-    getDate() { return this.dueDate; }
-    getFormattedDate() {
+    getDueDate() { return this.dueDate; }  // yyyy-mm-dd
+    getFormattedDate() {    // formatted DATE fns
         const dateString = this.dueDate.split('-');
         return toDate(new Date(dateString[0], dateString[1], dateString[2]));
     }
-    setDate(newDate) { this.dueDate = newDate; }
+    /**
+     * Sets a new due date  
+     * @param {String} newDate yyyy-mm-dd
+     */
+    setDueDate(newDate) { this.dueDate = newDate; }
 
     getPriority() { return this.priority; }
     setPriority(newPriority) { this.priority = newPriority; }
 
+    /**
+     * @returns boolean flag for completion
+     */
     getCompletion() {return this.completed; }
-    markComplete() { this.completed = true; }
-    markIncomplete() { this.completed = false; }
+
+    /**
+     * Negates the completion flag of the task
+     */
+    markCompletion() { this.completed = !this.completed; }
 }

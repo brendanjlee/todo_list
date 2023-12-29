@@ -1,30 +1,88 @@
 import TaskItem from "./modules/taskItem";
 import Project from "./modules/Project";
-import { isToday } from "date-fns";
+import { isToday, nextThursday } from "date-fns";
+import TodoList from "./modules/TodoList";
 
-let newtask1 = new TaskItem('joe');
-newtask1.setDate('2023-12-10');
-let newtask2 = new TaskItem('zoe');
-newtask2.setDate('2023-12-28');
-let newtask3 = new TaskItem('goe');
-newtask3.setDate('1999-12-9');
-newtask3.setPriority(3);
+const TODOLIST = new TodoList();
 
-const project = new Project('default');
-project.addTask(newtask1);
-project.addTask(newtask2);
-project.addTask(newtask3);
+const contentDiv = document.querySelector('.content');
+const sidebarDiv = document.querySelector('.sidebar');
 
-console.log(project.getTasks())
+function addNewProject() {
+    const projectForm = document.querySelector('#projectForm');
+    projectForm.addEventListener('submit', addProjectListener);
+}
 
-// date testing
-const date = document.getElementById('dateInput')
-date.addEventListener("change", function() {
-    var input = this.value;
-    newtask1.setDate(input);
-    project.sortTasksByDate();
-    console.log(project.getWeeklyTasks());
-})
+function addProjectListener(event) {
+    event.preventDefault();
+    const newProjName = event.target.elements.projectInput.value;
+    TODOLIST.addProject(newProjName);
+    console.log(TODOLIST)
+    projectForm.reset();
+}
 
-project.sortTasksByPrio();
-console.log(project.getTasks())
+addNewProject();
+
+
+// const project = new Project('default');
+// project.addTask(newtask1);
+// project.addTask(newtask2);
+// project.addTask(newtask3);
+
+// console.log(project.getTasks())
+
+// // date testing
+// const date = document.getElementById('dateInput')
+// date.addEventListener("change", function() {
+//     var input = this.value;
+//     newtask1.setDate(input);
+//     project.sortTasksByDate();
+//     console.log(project.getWeeklyTasks());
+// })
+
+// project.sortTasksByPrio();
+// console.log(project.getTasks())
+
+// TODO list testing
+// const mylist = new TodoList();
+// mylist.addProject('homework');
+// mylist.addProject('projects');
+// mylist.addProject('something');
+// console.log(mylist);
+
+// for (let i=0; i < 20; i++) {
+//     let task = new TaskItem(`task${i}`);
+//     if (i % 2 == 0) {
+//         task.setDueDate(`2023-12-29`);
+//         mylist.addTaskToProject('homework', task);
+//     } else {
+//         task.setDueDate('2023-11-29');
+//         mylist.addTaskToProject('projects', task);
+//     }
+// }
+
+// console.log(mylist.getAllTasks());
+
+// let newtask = new TaskItem('newtask');
+// newtask.setDueDate('2023-12-28');
+// mylist.addTaskToProject('homework', newtask);
+// console.log(mylist.getAllDailyTasks())
+// console.log(mylist.getAllWeeklyTasks());
+
+// console.log('testing deleting from project')
+// mylist.deleteTaskFromProject('homework', 'task0');
+// console.log(mylist.getProject('homework'));
+
+// console.log('testing marking task from proj')
+// mylist.markTaskFromProject('homework', 'newtask');
+// console.log(mylist.getProject('homework'))
+// mylist.markTaskFromProject('homework', 'newtask');
+// console.log(mylist.getProject('homework'))
+
+// console.log('testing update date')
+// mylist.updateTaskDateFromProject('homework', 'newtask', '1999-08-26')
+// console.log(mylist.getProject('homework'))
+
+// console.log('testing updating prio')
+// mylist.updateTaskPrioFromProject('homework', 'newtask', 2)
+// console.log(mylist.getProject('homework'))
