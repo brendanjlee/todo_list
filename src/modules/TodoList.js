@@ -91,6 +91,14 @@ export default class TodoList {
     }
 
     /**
+     * Returns all projects in the current todolist
+     * @returns an array of Projects in the todo list
+     */
+    getAllProjects() {
+        return this.projects;
+    }
+
+    /**
      * Returns a project from the list based on the name
      * @param {String} projectName name of project to retrieve
      * @returns Project if found. null otherwise 

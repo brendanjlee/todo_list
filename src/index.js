@@ -2,26 +2,10 @@ import TaskItem from "./modules/taskItem";
 import Project from "./modules/Project";
 import { isToday, nextThursday } from "date-fns";
 import TodoList from "./modules/TodoList";
+import UI from "./modules/UI";
 
-const TODOLIST = new TodoList();
+UI();
 
-const contentDiv = document.querySelector('.content');
-const sidebarDiv = document.querySelector('.sidebar');
-
-function addNewProject() {
-    const projectForm = document.querySelector('#projectForm');
-    projectForm.addEventListener('submit', addProjectListener);
-}
-
-function addProjectListener(event) {
-    event.preventDefault();
-    const newProjName = event.target.elements.projectInput.value;
-    TODOLIST.addProject(newProjName);
-    console.log(TODOLIST)
-    projectForm.reset();
-}
-
-addNewProject();
 
 
 // const project = new Project('default');
