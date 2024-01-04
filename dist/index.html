@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="icon" type="image/x-icon" href="../assets/logo.svg"> -->
+    <link rel="stylesheet" href="styles.css">
+    <title>TODO List</title>
+</head>
+<body>
+    <div class="header">TODO List</div>
+    <div class="content">
+        <div class="sidebar">
+            <!-- default - all, today, this week -->
+            <button class="nav-btn" id="generalTaskBtn">General</button>
+            <button class="nav-btn" id="dailyTaskBtn">Today's Tasks</button>
+            <button class="nav-btn" id="weeklyTaskBtn">This Week's Tasks</button>
+            <!-- generated -->
+            <h3 id="customListsHeader">Projects</h3>
+            <div class="customProjectsContainer"></div>
+            <form id="projectForm" class="hidden">
+                <input type="text" id="projectInput" placeholder="Enter new list name..." maxlength="24">
+                <div class="formBtn">
+                    <input type="submit" class="projectSubmitBtn" value="Add">
+                    <input type="button" class="projectCancelBtn" value="Cancel">
+                </div>
+            </form>
+            <button class="nav-btn" id="addNewProjBtn">Add New List</button>
+        </div>
+        <div class="tasklist">
+            <div class="tasks">
+                <p>hi</p>
+                <div class="task-item-left">
+                    <input type="checkbox" id="taskCheck" name="taskCheck" value="marked">
+                    <p class="task-content">Laundry</p>
+                </div>
+                <div class="task-item-right">
+                    <p>due date</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">brendanjlee</div>
+    <script src="main.js"></script>
+</body>
+</html>
