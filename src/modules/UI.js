@@ -4,16 +4,6 @@ import TaskItem from "./taskItem";
 export default function UI() {
     // Globals
     const todoList = new TodoList();
-    const ALLTASKS = 0;
-    const DAILYTASKS = 1;
-    const WEEKLYTASKS = 2;
-    const currentTask = ALLTASKS;
-
-    // constants
-    const sidebarDiv = document.querySelector('.sidebar');
-    const contentDiv = document.querySelector('.content');
-    const projectForm = document.querySelector('#projectForm');
-    const customProjDiv = document.querySelector('.customProjectsContainer');
 
     // For loading test
     function loadDefaultTodoList() {
@@ -29,18 +19,16 @@ export default function UI() {
         todoList.addTaskToProject('Default', task3);
     }
 
-    function loadCurrentTasks() {
-        const tasks = [];
-        if (currentTask == ALLTASKS) {
-            tasks = todoList.getAllTasks();
-            tasks.forEach(tasks => {
-                const element = document.createElement('div');
-                element.classList.add('tasks');
-            });
-        }
+    // constants
+    const sidebarDiv = document.querySelector('.sidebar');
+    const contentDiv = document.querySelector('.content');
+    const projectForm = document.querySelector('#projectForm');
+    const customProjDiv = document.querySelector('.customProjectsContainer');
+
+    function generateProjectBtn(projectName) {
+        const projectElem = document.createElement('button');
     }
 
-    // sidebar
     function loadProjects() {
         // get all projects from current list
         // clear the projects dom and then load
@@ -53,29 +41,4 @@ export default function UI() {
             customProjDiv.appendChild(btn);
         });
     }
-
-    function initListeners() {
-        projectForm.addEventListener('submit', addProjectListener);
-    }
-
-    // Event Listeners
-    function addProjectListener(event) {
-        event.preventDefault();
-        const newProjName = event.target.elements.projectInput.value;
-        todoList.addProject(newProjName);
-        console.log(todoList)
-        projectForm.reset();
-        customProjDiv.innerHTML = ''; // clear html
-        loadProjects(); // load projects when new is added
-    }
-
-    // Init program
-    function init() {
-        loadDefaultTodoList();
-        initListeners();
-        loadProjects();
-        loadCurrentTasks();
-    }
-
-    init();
 }

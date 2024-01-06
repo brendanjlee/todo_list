@@ -4,8 +4,7 @@ import { isToday, nextThursday } from "date-fns";
 import TodoList from "./modules/TodoList";
 import UI from "./modules/UI";
 
-UI();
-
+//UI();
 
 
 // const project = new Project('default');
@@ -15,7 +14,6 @@ UI();
 
 // console.log(project.getTasks())
 
-// // date testing
 // const date = document.getElementById('dateInput')
 // date.addEventListener("change", function() {
 //     var input = this.value;

@@ -25,22 +25,30 @@
                     <input type="button" class="projectCancelBtn" value="Cancel">
                 </div>
             </form>
-            <button class="nav-btn" id="addNewProjBtn">Add New List</button>
+            <!-- <button class="nav-btn" id="addNewProjBtn">Add New List</button> -->
         </div>
+
         <div class="tasklist">
-            <div class="tasks">
-                <p>hi</p>
+            <div class="task-item">
                 <div class="task-item-left">
-                    <input type="checkbox" id="taskCheck" name="taskCheck" value="marked">
+                    <input type="checkbox" class='taskCheck' id="taskCheck" name="taskCheck">
                     <p class="task-content">Laundry</p>
                 </div>
                 <div class="task-item-right">
-                    <p>due date</p>
+                    <label for="input-dueDate">Due Date</label>
+                    <input type='date' class="input-dueDate" name="input-dueDate" value="2024-01-06"/>
+                </div>
+            </div>
+            <div class="addTask">
+                <input class="input-addTask" type="text">
+                <div class="addTask-btns">
+                    <button class="addTask-popup-btn">Add</button>
+                    <button class="addTask-popup-btn">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">brendanjlee</div>
+    <div class="footer">@brendanjlee</div>
     <script src="main.js"></script>
 </body>
 </html>
