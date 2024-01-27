@@ -39,16 +39,22 @@ body {
     min-width: 250px;
     max-width: 400px;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
 
+.viewsContainer {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
 
 /* container for user added project list */
-.customProjectsContainer {
+.projectsContainer {
     display: flex;
     flex-direction: column;
+    gap: 5px;
+    margin-bottom: 1rem;
 }
 
 /* container for the task items */
@@ -58,26 +64,27 @@ body {
     max-width: 1500px;
     display: flex;
     flex-direction: column;
-    gap: 5px
-}
-
-/* Add task button */
-.addTask {
-    width: inherit;
-    display: flex;
-    flex-direction: column;
+    gap: 5px;
     align-items: center;
 }
 
 /* individual task item */
-.task-item {
+.taskItem {
+    width: 66%;
     border-style: solid;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
 }
 
-.task-item-left {
+.taskItemLeft {
+    margin-left: 3rem;
     display: flex;
-    justify-content: space-between;
+}
+
+.taskItemRight {
+    margin-right: 3rem;
+    display: flex;
+    gap:  2px;
+    align-items: center;
 }

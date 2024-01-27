@@ -11,41 +11,35 @@
     <div class="header">TODO List</div>
     <div class="content">
         <div class="sidebar">
-            <!-- default - all, today, this week -->
-            <button class="nav-btn" id="generalTaskBtn">General</button>
-            <button class="nav-btn" id="dailyTaskBtn">Today's Tasks</button>
-            <button class="nav-btn" id="weeklyTaskBtn">This Week's Tasks</button>
-            <!-- generated -->
-            <h3 id="customListsHeader">Projects</h3>
-            <div class="customProjectsContainer"></div>
-            <form id="projectForm" class="hidden">
-                <input type="text" id="projectInput" placeholder="Enter new list name..." maxlength="24">
-                <div class="formBtn">
-                    <input type="submit" class="projectSubmitBtn" value="Add">
-                    <input type="button" class="projectCancelBtn" value="Cancel">
-                </div>
-            </form>
-            <!-- <button class="nav-btn" id="addNewProjBtn">Add New List</button> -->
+            <div class="viewsContainer">
+                <h2>Views</h2>
+                <button class="nav-btn" id="allTasksBtn">All Tasks</button>
+                <button class="nav-btn" id="dailyTaskBtn">Today's Tasks</button>
+                <button class="nav-btn" id="weeklyTaskBtn">This Week's Tasks</button>
+            </div>
+            <h2>Projects</h2>
+            <div class="projectsContainer">
+                <!-- Create Projects here -->
+            </div>
+            <button class="createProjectBtn">Create Project</button>
         </div>
-
         <div class="tasklist">
-            <div class="task-item">
-                <div class="task-item-left">
+            <div class="taskButtonsContoller">
+                <button class="addTaskBtn">Add Task</button>
+                <button class="showCompleted">Show Completed</button>
+                <button class="dateSortBtn">Sort by Date</button>
+                <button class="prioSortBtn">Sort by Priority</button>
+            </div>
+            <!-- <div class="taskItem">
+                <div class="taskItemLeft">
                     <input type="checkbox" class='taskCheck' id="taskCheck" name="taskCheck">
-                    <p class="task-content">Laundry</p>
+                    <p class="taskContent">Laundry</p>
                 </div>
-                <div class="task-item-right">
+                <div class="taskItemRight">
                     <label for="input-dueDate">Due Date</label>
                     <input type='date' class="input-dueDate" id="input-dueDate" value="2024-01-06"/>
                 </div>
-            </div>
-            <div class="addTask">
-                <input class="input-addTask" type="text">
-                <div class="addTask-btns">
-                    <button class="addTask-popup-btn">Add</button>
-                    <button class="addTask-popup-btn">Cancel</button>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
     <div class="footer">@brendanjlee</div>
